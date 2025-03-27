@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphics Design Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Link to Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Body and Full-Height Layout */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #343a40;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            font-size:1.5rem;
+            font-weight: 500;
+            padding: 20px25px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #fff;
+            background-color: #ff0000;
+            border-radius: 5px;
+            transform: scale(1.05);
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Logo Styling */
+        .navbar-logo {
+            max-width: 100%;  /* Ensures the logo is responsive */
+            height: auto;  /* Maintain the aspect ratio */
+            width: 50px; /* Set a fixed width */
+            padding: 5px;  /* Adds a little space around the logo */
+        }
+
+        /* Jumbotron Section with Primary Background */
+        .jumbotron {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 100px 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .jumbotron h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .jumbotron p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            font-weight: 300;
+        }
+
+        .jumbotron .btn {
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            margin-top: 20px;
+            background-color: #ff5722;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .jumbotron .btn:hover {
+            background-color: #ff3d00;
+        }
+
+        /* FAQ Section */
+        #faq {
+            background-color: #f8f9fa;
+            padding: 60px 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        #faq h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        #faq p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: scale(1.05);
+        }
+
+        .faq-item h4 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .faq-item p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        #services {
+            background-color: #f1f1f1;
+            padding: 60px 30px;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .service-item p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #fff;
+            padding: 60px 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 40px 30px;
+        }
+
+        footer .footer-links a {
+            color: #ccc;
+            font-size: 1rem;
+            margin: 5px 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-links a:hover {
+            color: #fff;
+        }
+
+        footer .social-media a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-media a:hover {
+            color: #007bff;
+        }
+        .footer {
+        background-color: #1a1a1a;
+        color: #fff;
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+    .footer-branding h4 {
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+    .footer-branding p {
+        font-size: 16px;
+        font-weight: 300;
+    }
+    .footer h5 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #e0e0e0;
+    }
+    .footer ul {
+        padding-left: 0;
+    }
+    .footer ul li {
+        list-style: none;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .footer ul li a {
+        text-decoration: none;
+        color: #bdbdbd;
+        transition: color 0.3s ease;
+    }
+    .footer ul li a:hover {
+        color: #fff;
+    }
+    .text-hover:hover {
+        color: #4caf50 !important; /* Green color for hover effect */
+    }
+    .footer-bottom p {
+        font-size: 14px;
+        color: #bdbdbd;
+        font-weight: 300;
+    }
+    .footer-bottom p strong {
+        font-weight: 600;
+        color: #4caf50;
+    }
+    .go-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #4caf50; /* Green background color */
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 15px;
+        font-size: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    /* Ensure the background image container is set to position relative */
+.background-container {
+    position: relative;
+    overflow: hidden; /* Hide anything outside the bounds of the container */
+}
+
+/* Style for the background image */
+.background-container img {
+    width: 100%;
+    height: auto;
+}
+
+/* Create the zigzag animation effect using pseudo-elements */
+.animation-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Zigzag effect as a base */
+    pointer-events: none; /* Allow clicks through the layer */
+    animation: zigzagAnimation 4s ease-in-out infinite;
+}
+
+/* Animation effect for the zigzag */
+@keyframes zigzagAnimation {
+    0% {
+        transform: translateX(-100%) rotate(0deg);
+    }
+    25% {
+        transform: translateX(0%) rotate(45deg);
+    }
+    50% {
+        transform: translateX(100%) rotate(90deg);
+    }
+    75% {
+        transform: translateX(0%) rotate(135deg);
+    }
+    100% {
+        transform: translateX(-100%) rotate(180deg);
+    }
+}
+
+/* Optional: Additional animations running simultaneously */
+.animation-layer::before,
+.animation-layer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation: zigzagAnimation2 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.animation-layer::before {
+    animation-delay: -1s;
+    background: rgba(0, 255, 255, 0.3);
+}
+
+.animation-layer::after {
+    animation-delay: -2s;
+    background: rgba(255, 0, 255, 0.3);
+}
+
+/* Another type of zigzag */
+@keyframes zigzagAnimation2 {
+    0% {
+        transform: translateX(100%) rotate(0deg);
+    }
+    25% {
+        transform: translateX(0%) rotate(45deg);
+    }
+    50% {
+        transform: translateX(-100%) rotate(90deg);
+    }
+    75% {
+        transform: translateX(0%) rotate(135deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(180deg);
+    }
+}
+
+
+    
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div>
+                    <a href="#">
+                        <!-- Logo Image -->
+                        <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\logo.jpg" alt="Logo" class="navbar-logo">
+                    </a>
+                </div>
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron Section -->
+    <div class="jumbotron" id="home">
+        <h1>Welcome to Likna Creative Graphics Studio</h1>
+        <p>We transform your ideas into stunning visual masterpieces. Explore our services and discover how we can help bring your brand to life.</p>
+        <a class="btn btn-light btn-lg" href="#services" role="button">Explore Our Services</a>
+    </div>
+
+    <section id="about-me" class="py-5 my-5 bg-brown text-white">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <p class="lead mb-4">
+                        I am a graphic designer, and anything related to my profession is of great interest to me. 
+                        I am here to help you with my skills and expertise.
+                    </p>
+                    <!-- Centered Inline Button with black text -->
+                    <a href="#contact" class="btn btn-primary btn-lg text-uppercase d-inline-block" style="color: black;">Contact Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section class="mx mx-auto d-block">
+        <div class="background-container">
+            <img src="images\BACkground for website.jpg" alt="no img" class="img-fluid img-thumbnail">
+            <div class="animation-layer"></div>
+        </div>
+    </section>
+    
+   <!-- About Us Section -->
+<section id="about" class="container my-5 p-5 m-5" style="background-color: #1b5e20; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    <h2 class="text-center text-white mb-4" style="font-size: 2.5rem; font-weight: 700; letter-spacing: 1px;">About Us</h2>
+    <div class="row align-items-center">
+        <!-- Image Column -->
+        <div class="col-md-6 mb-4">
+            <a href="C:\Users\op\Desktop\graphics design\jpeg or png for web\logo.jpg" target="_blank">
+                <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\logo.jpg" alt="About Us Image" class="img-fluid rounded shadow-lg" style="transition: transform 0.3s ease-in-out;">
+            </a>
+        </div>
+
+        <!-- Text Content Column -->
+        <div class="col-md-6 text-white">
+            <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 300;">
+                Hello! My name is <strong>Likna Abebe Chanie</strong>, and I am a highly experienced graphic designer with many years of expertise in the industry. Over the years, I’ve developed a deep passion for creating visually compelling and impactful designs.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 300;">
+                I specialize in a wide range of graphic design services, including branding, logo creation, web design, print materials, digital marketing graphics, and more. With a keen eye for detail and an understanding of design principles, I strive to craft designs that not only look great but also effectively communicate the message and vision of my clients.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 300;">
+                Throughout my career, I’ve worked with numerous businesses, helping them establish strong, memorable visual identities that stand out in their respective markets. Whether you're looking to rebrand, design a stunning website, or create eye-catching marketing collateral, I am dedicated to delivering high-quality, innovative designs that bring your ideas to life.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 300;">
+                My design philosophy is simple: great design is a powerful tool that solves problems, communicates ideas clearly, and connects with people on an emotional level. I am committed to providing my clients with personalized design solutions that not only meet their expectations but exceed them.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 300;">
+                If you're looking for a passionate and experienced graphic designer to help elevate your brand, I’d love to collaborate with you and bring your creative vision to life!
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service-item">
+                    <h3>Branding</h3>
+                    <p>Creating a unique and memorable brand identity that reflects your business values and vision.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-item">
+                    <h3>Print Design</h3>
+                    <p>Designing impactful brochures, flyers, business cards, and other print materials that make an impression.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-item">
+                    <h3>Marketing Materials</h3>
+                    <p>Developing marketing materials that support your marketing efforts, from posters to digital assets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" style="background-color: #1c1f27; border: 5px solid #0d1b2a; padding: 30px; border-radius: 10px;">
+        <h2 class="text-center mb-4" style="font-size: 2.5rem; font-weight: 600; color: #f1f1f1;">My Portfolio</h2>
+    
+        <!-- Bootstrap Carousel with Captions and Overlay -->
+        <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel" style="border-radius: 10px; overflow: hidden;">
+            <div class="carousel-inner">
+    
+                <!-- First Item -->
+                <div class="carousel-item active">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\Untitled-1-Recovered.jpg" class="d-block w-100" alt="Portfolio Image 1" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                                            </div>
+                </div>
+    
+                <!-- Second Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\food menu.jpg" class="d-block w-100" alt="Portfolio Image 2" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+    
+                <!-- Third Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\fast food.jpg" class="d-block w-100" alt="Portfolio Image 3" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\furniture.jpg" class="d-block w-100" alt="Portfolio Image 3" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\photo_2025-03-23_21-38-43.jpg" class="d-block w-100" alt="Portfolio Image 3" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\photo_2025-03-23_21-38-50.jpg" class="d-block w-100" alt="Portfolio Image 3" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\photo_2025-03-23_21-38-54.jpg" class="d-block w-100" alt="Portfolio Image 3" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\photo_2025-03-23_21-39-06.jpg" class="d-block w-100" alt="Portfolio Image 3" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\photo_2025-03-23_21-40-09.jpg" class="d-block w-100" alt="Portfolio Image 3" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+    
+                <!-- Fourth Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\fashion cloth.jpg" class="d-block w-100" alt="Portfolio Image 4" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+    
+                <!-- Fifth Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\school banner.jpg" class="d-block w-100" alt="Portfolio Image 5" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                       </div>
+                </div>
+    
+                <!-- Sixth Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\tigst migb bet.jpg" class="d-block w-100" alt="Portfolio Image 6" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+    
+                <!-- Seventh Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\laundary.jpg" class="d-block w-100" alt="Portfolio Image 7" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+    
+                <!-- Eighth Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\kiya print and Advert.jpg" class="d-block w-100" alt="Portfolio Image 8" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                       </div>
+                </div>
+    
+                <!-- Ninth Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\fruit store.jpg" class="d-block w-100" alt="Portfolio Image 9" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+    
+                <!-- Tenth Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\female salon.jpg" class="d-block w-100" alt="Portfolio Image 10" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                       </div>
+                </div>
+    
+                <!-- Eleventh Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\real estate.jpg" class="d-block w-100" alt="Portfolio Image 11" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+    
+                <!-- Twelfth Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\male beauty salon.jpg" class="d-block w-100" alt="Portfolio Image 12" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                                           </div>
+                </div>
+    
+                <!-- Thirteenth Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\logo.jpg" class="d-block w-100" alt="Portfolio Image 13" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+    
+                <!-- Fourteenth Item -->
+                <div class="carousel-item">
+                    <img src="C:\Users\op\Desktop\graphics design\jpeg or png for web\photo_2025-03-23_21-38-30.jpg" class="d-block w-100" alt="Portfolio Image 14" style="height: 60vh; object-fit: contain;">
+                    <div class="carousel-caption d-none d-md-block">
+                        </div>
+                </div>
+    
+                <!-- More items can follow in the same pattern... -->
+    
+            </div>
+    
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+<section id="faq" class="container my-5 p-5">
+    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+
+        <!-- Question 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    What services do you offer as a graphic designer?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    I offer a wide range of graphic design services including logo design, branding, web design, print materials (brochures, business cards), digital marketing graphics, packaging design, and more.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    What is your design process like?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    My design process involves initial consultation, understanding your business goals, creating design concepts, feedback and revisions, and delivering the final designs in the appropriate formats.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    How do I get started with working with you?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    To get started, you can contact me via email or through the contact form on my website. Once we discuss your project, I will send you a proposal and we can begin working on your designs.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    How long will it take to complete my project?
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    The time required depends on the complexity and scope of the project. Typically, a logo design takes about 1-2 days, while a full branding project could take 1-2 weeks.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    What are your pricing options?
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    My pricing depends on the type of project. I offer custom quotes based on the requirements, scope, and timeline. Please feel free to contact me for a personalized quote.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Do you offer revisions? How many revisions are included?
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes, I offer revisions. Typically, 2-3 rounds of revisions are included in the project. Additional revisions can be provided at an extra cost.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    What formats will I receive my final design in?
+                </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    I provide final designs in multiple formats, including AI, PSD, PNG, JPG, PDF, and any other formats you may need for print or web use.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                    Can you help with branding or rebranding?
+                </button>
+            </h2>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes, I specialize in both branding and rebranding. I can help you create a new identity or refresh your current brand to make it more impactful and aligned with your business goals.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNine">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                    How do you handle copyright and ownership of the designs?
+                </button>
+            </h2>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Once the final payment is made, all rights to the design are transferred to you. You will have full ownership of the final design, including the right to use it commercially.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="contact" class="container my-5 p-5" style="background-color: #f8f9fa; border-radius: 10px;">
+            <h2 class="text-center mb-4" style="font-size: 2.5rem; font-weight: 600; color: #333;">Contact Us</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4 class="mb-3" style="font-size: 1.8rem; color: #2e3b3e;">Get in Touch</h4>
+                    <p style="font-size: 1.1rem; color: #555;">Have a question or want to discuss a project? Reach out to me through any of the platforms below.</p>
+                    <ul class="list-unstyled" style="font-size: 1.1rem; color: #555;">
+                        <li class="mb-2">
+                            <i class="fas fa-phone-alt" style="color: #007bff;"></i> 
+                            <strong>Phone:</strong> +251 922 909 495
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-envelope" style="color: #007bff;"></i> 
+                            <strong>Email:</strong> <a href="mailto:canaworkp@gmail.com" style="color: #007bff;">canaworkp@gmail.com</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fab fa-telegram-plane" style="color: #007bff;"></i> 
+                            <strong>Telegram:</strong> <a href="https://t.me/liknagraphics" target="_blank" style="color: #007bff;">@liknagraphics</a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <!-- Contact Form Column with Formspree -->
+                <div class="col-md-6 mb-4">
+                    <h4 class="mb-3" style="font-size: 1.8rem; color: #2e3b3e;">Send a Message</h4>
+                    <form action="https://formspree.io/f/xvgkrpkq" method="POST" id="contactForm">
+                        <!-- First Name -->
+                        <div class="mb-3">
+                            <label for="first_name" class="form-label" style="font-size: 1.1rem; color: #333;">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" required pattern="[A-Za-z]+" title="Only alphabetic characters are allowed">
+                            <div class="invalid-feedback" id="first_name_error" style="display:none;">Please enter a valid first name (only letters).</div>
+                        </div>
+        
+                        <!-- Last Name -->
+                        <div class="mb-3">
+                            <label for="last_name" class="form-label" style="font-size: 1.1rem; color: #333;">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" required pattern="[A-Za-z]+" title="Only alphabetic characters are allowed">
+                            <div class="invalid-feedback" id="last_name_error" style="display:none;">Please enter a valid last name (only letters).</div>
+                        </div>
+        
+                        <!-- Phone Number -->
+                        <div class="mb-3">
+                            <label for="phone" class="form-label" style="font-size: 1.1rem; color: #333;">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required pattern="^\+2519[0-9]{8}$" title="Phone number must be in the format +2519XXXXXXXX" />
+                            <div class="invalid-feedback" id="phone_error" style="display:none;">Please enter a valid phone number (e.g. +251922909495).</div>
+                        </div>
+        
+                        <!-- Address -->
+                        <div class="mb-3">
+                            <label for="address" class="form-label" style="font-size: 1.1rem; color: #333;">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" required />
+                            <div class="invalid-feedback" id="address_error" style="display:none;">Please enter your address.</div>
+                        </div>
+        
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label" style="font-size: 1.1rem; color: #333;">Your Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required />
+                            <div class="invalid-feedback" id="email_error" style="display:none;">Please enter a valid email address.</div>
+                        </div>
+        
+                        <!-- Message -->
+                        <div class="mb-3">
+                            <label for="message" class="form-label" style="font-size: 1.1rem; color: #333;">Your Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            <div class="invalid-feedback" id="message_error" style="display:none;">Please enter a message.</div>
+                        </div>
+        
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary" style="font-size: 1.1rem; padding: 10px 20px;">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            // Form validation
+            document.getElementById('contactForm').addEventListener('submit', function (event) {
+                let formValid = true;
+        
+                // First Name Validation
+                const firstName = document.getElementById('first_name');
+                if (!firstName.value.match(/^[A-Za-z]+$/)) {
+                    formValid = false;
+                    document.getElementById('first_name_error').style.display = 'block';
+                } else {
+                    document.getElementById('first_name_error').style.display = 'none';
+                }
+        
+                // Last Name Validation
+                const lastName = document.getElementById('last_name');
+                if (!lastName.value.match(/^[A-Za-z]+$/)) {
+                    formValid = false;
+                    document.getElementById('last_name_error').style.display = 'block';
+                } else {
+                    document.getElementById('last_name_error').style.display = 'none';
+                }
+        
+                // Phone Number Validation
+                const phone = document.getElementById('phone');
+                if (!phone.value.match(/^\+2519[0-9]{8}$/)) {
+                    formValid = false;
+                    document.getElementById('phone_error').style.display = 'block';
+                } else {
+                    document.getElementById('phone_error').style.display = 'none';
+                }
+        
+                // Address Validation
+                const address = document.getElementById('address');
+                if (address.value.trim() === '') {
+                    formValid = false;
+                    document.getElementById('address_error').style.display = 'block';
+                } else {
+                    document.getElementById('address_error').style.display = 'none';
+                }
+        
+                // Email Validation
+                const email = document.getElementById('email');
+                if (!email.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)) {
+                    formValid = false;
+                    document.getElementById('email_error').style.display = 'block';
+                } else {
+                    document.getElementById('email_error').style.display = 'none';
+                }
+        
+                // Message Validation
+                const message = document.getElementById('message');
+                if (message.value.trim() === '') {
+                    formValid = false;
+                    document.getElementById('message_error').style.display = 'block';
+                } else {
+                    document.getElementById('message_error').style.display = 'none';
+                }
+        
+                if (!formValid) {
+                    event.preventDefault(); // Prevent form submission if there are validation errors
+                }
+            });
+        </script>
+        
+
+<!-- Add FontAwesome Icons Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<footer class="footer bg-dark text-white pt-5 pb-4">
+    <div class="container">
+        <div class="row">
+            <!-- Branding and Contact Info -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="footer-branding">
+                    <h4 class="text-uppercase font-weight-bold">Likna Abebe Chanie</h4>
+                    <p class="font-italic">Experienced Graphic Designer</p>
+                    <p>&copy; 2025 Likna Abebe Chanie. All Rights Reserved.</p>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5 class="text-uppercase font-weight-bold mb-3">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#portfolio" class="text-white text-hover">Portfolio</a></li>
+                    <li><a href="#about" class="text-white text-hover">About Me</a></li>
+                    <li><a href="#services" class="text-white text-hover">Services</a></li>
+                    <li><a href="#contact" class="text-white text-hover">Contact</a></li>
+                    <!-- Added links for Terms, Privacy, and FAQ -->
+                    <li><a href="terms and con.html" class="text-white text-hover">Terms and Conditions</a></li>
+                    <li><a href="privacy.html" class="text-white text-hover">Privacy Policy</a></li>
+                    <li><a href="#faq" class="text-white text-hover">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info and Social Links -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5 class="text-uppercase font-weight-bold mb-3">Contact</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-phone-alt"></i> <span class="ml-2">+251 922 909 495</span></li>
+                    <li><i class="fas fa-envelope"></i> <span class="ml-2"><a href="mailto:canaworkp@gmail.com" class="text-white text-hover">canaworkp@gmail.com</a></span></li>
+                    <li><i class="fab fa-telegram"></i> <span class="ml-2"><a href="https://t.me/liknagraphics" target="_blank" class="text-white text-hover">Telegram</a></span></li>
+                    <li><i class="fab fa-linkedin"></i> <span class="ml-2"><a href="https://linkedin.com/in/liknagraphics" target="_blank" class="text-white text-hover">LinkedIn</a></span></li>
+                    <li><i class="fab fa-facebook"></i> <span class="ml-2"><a href="https://facebook.com/liknagraphics" target="_blank" class="text-white text-hover">Facebook</a></span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom text-center mt-4">
+            <p class="font-weight-light">Designed with ❤️ by <strong>Likna Abebe Chanie</strong></p>
+        </div>
+    </div>
+    <!-- Go to Top Button -->
+    <a href="#top" id="goToTop" class="go-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</footer>
+
+
+</body>
+
+</html>
